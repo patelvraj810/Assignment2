@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-sm
+    ul.navbar-nav
+        if(!user)
+            li.nav-item.active
+                a.nav-link(href='/login') Login
+            li.nav-item.active
+                a.nav-link(href='/cars') Inventory
+            li.nav-item.active
+                a.nav-link(href='/register') Register
+        else
+            li.nav-item.active
+                a.nav-link(href='/addcar') Add New Car
+            li.nav-item.active
+                a.nav-link(href='/cars') Inventory
+            li.nav-item.active
+                a.nav-link(href='/register') Logout

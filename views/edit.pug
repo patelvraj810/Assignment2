@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  if(!user)
+    .jumbotron
+        h1.text-center.text-danger Please Register/Login to access this..😊
+  else
+    h1.text-center Update Car to Database
+    form(method='POST' action='/update').jumbotron
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Make
+            input.form-control(type='text' placeholder='Make of the car' name="make" value=adv.make)
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Model
+            input.form-control(type='text' placeholder='Model of the car' name="model" value=adv.model)
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Year
+            input.form-control(type='text' placeholder='Year of the car' name="year" value=adv.year)
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Description
+            input.form-control(type='text' placeholder='Description of the car' name="description" value=adv.description)
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Price
+            input.form-control(type='text' placeholder='Price of the car' name="price" value=adv.price)
+
+        
+          
+        input(type='hidden' name='id' value=adv.id)
+
+        input.btn.btn-info(type='submit' value='submit')

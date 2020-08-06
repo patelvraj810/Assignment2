@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  if(!user)
+    .jumbotron
+        h1.text-center.text-danger Please Register/Login to access this..😊
+  else
+    h1.text-center Add Car to Database
+    form(method='POST' action='/addcar' enctype='multipart/form-data').jumbotron
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Make
+            input.form-control(type='text' placeholder='Make of the car' name="make")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Model
+            input.form-control(type='text' placeholder='Model of the car' name="model")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Year
+            input.form-control(type='text' placeholder='Year of the car' name="year")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Description
+            input.form-control(type='text' placeholder='Description of the car' name="description")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Price
+            input.form-control(type='text' placeholder='Price of the car' name="price")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span.input-group-text Image
+            input.form-control(type='file' placeholder='Make of the car' name="image")
+
+        input.btn.btn-info(type='submit' value='submit')

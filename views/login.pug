@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1.text-center Login Page
+  form(method='POST' action='/login').jumbotron
+    .input-group.mb-3
+      .input-group-prepend
+        span.input-group-text @
+      input.form-control(type='text' placeholder='Username' name="username")
+
+    .input-group.mb-3
+      .input-group-prepend
+        span.input-group-text :
+      input.form-control(type='password' placeholder='password' name="password")
+    input.btn.btn-info(type='submit' value='Login')
